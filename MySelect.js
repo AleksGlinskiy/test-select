@@ -98,7 +98,7 @@ class MySelect {
     }
 
     dispose() {
-        this.element.removeEventListener('click', this._onClick);
+        this.element.removeEventListener('click', this.onClick);
     }
 }
 
