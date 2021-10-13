@@ -31,18 +31,11 @@ class MySelect {
         const type = target.closest("[data-select]").dataset.select;
         if (type === 'input') {
             let val = target.value.trim();
-            let elasticItems = this.elasticItems;
 
             if (val != '') {
-                elasticItems.forEach(function (elem) {
-                    if (elem.innerText.toLowerCase().search(val.toLowerCase()) == -1) {
-                        elem.classList.add("hide");
-                    } else {
-                        elem.classList.remove("hide");
-                    }
-                });
+                this.elasticItems.forEach(n => n.classList.toggle('hide', !n.innerText.toLowerCase().startsWith(val.toLowerCase())));
             } else {
-                elasticItems.forEach(function (elem) {
+                this.elasticItems.forEach(function (elem) {
                     elem.classList.remove("hide");
                 });
             }
