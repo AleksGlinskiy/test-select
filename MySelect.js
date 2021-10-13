@@ -35,9 +35,7 @@ class MySelect {
             if (val != '') {
                 this.elasticItems.forEach(n => n.classList.toggle('hide', !n.innerText.toLowerCase().startsWith(val.toLowerCase())));
             } else {
-                this.elasticItems.forEach(function (elem) {
-                    elem.classList.remove("hide");
-                });
+                this.elasticItems.forEach(n => n.classList.remove("hide"));
             }
         }
     }
